@@ -170,4 +170,22 @@ console.log(populationTotal);
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
+//.foreach arrow conversion
+const animalNames = [];
+zooAnimals.forEach(element => animalNames.push(`Name:${element.animal_name}, Scientific:${element.scientific_name}`));
+console.log(animalNames);
 
+//.map arrow conversion
+let lowerCase = [];
+lowerCase = zooAnimals.map( element => element.animal_name.toLowerCase());
+console.log(lowerCase); 
+
+//.filter arrow conversion
+let largerPopulation = [];
+largerPopulation = zooAnimals.filter(element => element.population < 5);
+console.log(largerPopulation);
+
+//.reduce arrow conversion
+let populationTotal = 0;
+populationTotal = zooAnimals.reduce((acc, curValue) => acc + curValue.population , 0);
+console.log(populationTotal);
